@@ -1,0 +1,439 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.row-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.col-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.f-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.h2 {
+  font-size: 1.9230769231rem;
+  font-weight: bold;
+}
+
+.medium-head {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/*
+  /// Tip:
+  you Can make All Media Screens as a Variables 
+  in _breakPoints.scss & _variables.scss Files 
+  but this is just a small Test to show you how to use This Structure
+*/
+.container {
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+main .coming-soon {
+  height: 80vh;
+  background-image: url("../../assets/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+main .coming-soon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+main .coming-soon .container {
+  position: relative;
+  text-align: center;
+}
+main .coming-soon .container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/zoser_pattern.svg");
+  opacity: 0.5;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+main .coming-soon .container h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  word-spacing: 24px;
+  padding: 0.25em 0 0.325em;
+  text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+  margin: 0;
+  /* Clip Background Image */
+  background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  animation: move 80s linear infinite;
+  -webkit-animation: move 80s linear infinite;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform-origin: center;
+}
+main .coming-soon .container div {
+  z-index: 1;
+  text-align: center;
+}
+main .coming-soon .container div img {
+  height: 200px;
+  margin: 0;
+}
+main .coming-soon .container div h2 {
+  background: 50% 100%/50% 50% no-repeat radial-gradient(ellipse at bottom, orangered, transparent, transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 10px;
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding-bottom: 24px;
+  animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+  -webkit-animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 2000ms;
+}
+main .coming-soon .container div p {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1.6px;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+@keyframes reveal {
+  80% {
+    letter-spacing: 8px;
+  }
+  100% {
+    background-size: 300% 300%;
+  }
+}
+@keyframes glow {
+  40% {
+    text-shadow: 0 0 8px orange;
+  }
+}
+@media screen and (max-width: 576px) {
+  main h1 {
+    font-size: 2rem !important;
+  }
+  main img {
+    height: 80px !important;
+  }
+  main h2 {
+    font-size: 1.6rem !important;
+    letter-spacing: 3px !important;
+  }
+  main p {
+    font-size: 0.8rem !important;
+    letter-spacing: 0 !important;
+  }
+}
+.footer {
+  position: relative;
+  width: 100%;
+  background: #3586ff;
+  height: 20vh;
+  padding: 20px 50px;
+}
+.footer .company-info {
+  gap: 56px;
+  font-size: 0.8rem;
+  line-height: 20px;
+  letter-spacing: 0.8px;
+  font-weight: 500;
+  color: white;
+}
+.footer .company-info i {
+  background-color: #223972;
+  width: 32px;
+  height: 32px;
+  color: #EC5238;
+  margin-right: 12px;
+  font-size: 16px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.footer .company-info a {
+  color: white;
+  display: inline-block;
+}
+.footer .company-info a:hover {
+  color: #223972;
+  text-decoration: underline;
+}
+.footer .company-info .info {
+  height: 15vh;
+  align-items: start;
+  gap: 12px;
+}
+.footer .company-info .info hr {
+  width: 100%;
+  margin: 0;
+  border-bottom: #223972 1px solid;
+  border-top: none;
+}
+.footer .company-info .info .branch {
+  align-items: start;
+  gap: 32px;
+}
+.footer .company-info .info .branch p {
+  margin: 0;
+  padding: 0;
+  max-width: 300px;
+}
+.footer .company-info .info .mail {
+  align-self: center;
+}
+.footer .company-info img {
+  height: 15vh;
+  max-width: 100%;
+}
+
+/* .social-icon,
+.menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+    list-style: none;
+}
+
+.social-icon__link {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.social-icon__link:hover {
+    transform: translateY(-10px);
+}
+
+.menu__link {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+    font-weight: 300;
+}
+
+.menu__link:hover {
+    opacity: 1;
+}
+
+.footer p {
+    color: #fff;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+} */
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("https://i.ibb.co/wQZVxxk/wave.png");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  z-index: 1000;
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  z-index: 999;
+  opacity: 0.5;
+  bottom: 10px;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  z-index: 1000;
+  opacity: 0.2;
+  bottom: 15px;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  z-index: 999;
+  opacity: 0.7;
+  bottom: 20px;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-position-x: 0px;
+  }
+}
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-position-x: 0px;
+  }
+}
+@media (max-width: 991px) {
+  footer {
+    height: 45vh !important;
+  }
+  .company-info {
+    flex-direction: column;
+  }
+  .company-info .branch {
+    flex-direction: column;
+    gap: 0px !important;
+  }
+  .company-info .branch .location {
+    height: 50px;
+  }
+  .company-info .branch p {
+    max-width: calc(100% - 32px - 12px) !important;
+  }
+  .company-info .mail {
+    align-self: start !important;
+  }
+  .company-info img {
+    order: -1;
+  }
+}
+@media screen and (max-width: 576px) {
+  footer {
+    height: 60vh !important;
+    padding: 0;
+    margin: 0;
+  }
+  .company-info {
+    flex-direction: column;
+  }
+  .company-info .branch {
+    flex-direction: column;
+    gap: 0px !important;
+    font-size: 0.6rem;
+    font-weight: normal;
+    line-height: 16px;
+  }
+  .company-info .branch .location {
+    height: 50px;
+  }
+  .company-info .branch p {
+    max-width: calc(100% - 32px - 12px) !important;
+  }
+  .company-info img {
+    order: -1;
+    margin-bottom: 30px;
+  }
+}/*# sourceMappingURL=main.css.map */

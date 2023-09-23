@@ -1,0 +1,252 @@
+@use "../helpers/index" as*;
+
+.footer {
+    position: relative;
+    width: 100%;
+    background: #3586ff;
+    height: 20vh;
+    // max-height: 30vh;
+    padding: 20px 50px;
+
+    .company-info {
+        // flex-wrap: wrap;
+        gap: 56px;
+        font-size: .8rem;
+        line-height: 20px;
+        letter-spacing: .8px;
+        font-weight: 500;
+        color: white;
+
+        i {
+            background-color: #223972;
+            width: 32px;
+            height: 32px;
+            color: #EC5238;
+            margin-right: 12px;
+            font-size: 16px;
+            @include radius;
+        }
+
+        a {
+            color: white;
+            display: inline-block;
+
+            &:hover {
+                color: #223972;
+                text-decoration: underline;
+            }
+        }
+
+
+        .info {
+            height: 15vh;
+            align-items: start;
+            gap: 12px;
+
+            hr {
+                width: 100%;
+                margin: 0;
+                border-bottom: #223972 1px solid;
+                border-top: none;
+
+            }
+
+            .branch {
+                align-items: start;
+                // margin-bottom: 12px;
+                gap: 32px;
+
+                p {
+                    margin: 0;
+                    padding: 0;
+                    max-width: 300px;
+                }
+            }
+
+            .mail {
+                align-self: center;
+            }
+        }
+
+        img {
+            height: 15vh;
+            max-width: 100%;
+            // overflow: hidden;
+        }
+    }
+}
+
+/* .social-icon,
+.menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+    list-style: none;
+}
+
+.social-icon__link {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.social-icon__link:hover {
+    transform: translateY(-10px);
+}
+
+.menu__link {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+    font-weight: 300;
+}
+
+.menu__link:hover {
+    opacity: 1;
+}
+
+.footer p {
+    color: #fff;
+    margin: 15px 0 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+} */
+
+.wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("https://i.ibb.co/wQZVxxk/wave.png");
+    background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+    0% {
+        background-position-x: 1000px;
+    }
+
+    100% {
+        background-position-x: 0px;
+    }
+}
+
+@keyframes animate {
+    0% {
+        background-position-x: -1000px;
+    }
+
+    100% {
+        background-position-x: 0px;
+    }
+}
+
+
+// Media
+
+@include small_screen() {
+    footer {
+        height: 45vh !important;
+        // padding: 0;
+    }
+
+    .company-info {
+        flex-direction: column;
+
+        .branch {
+            flex-direction: column;
+            gap: 0px !important;
+
+            .location {
+                height: 50px;
+            }
+
+            p {
+                max-width: calc(100% - 32px - 12px) !important;
+            }
+        }
+
+        .mail {
+            align-self: start !important;
+        }
+
+        img {
+            order: -1;
+        }
+    }
+}
+
+@include e-small_screen() {
+    footer {
+        height: 60vh !important;
+        padding: 0;
+        margin: 0;
+    }
+
+    .company-info {
+        flex-direction: column;
+
+        .branch {
+            flex-direction: column;
+            gap: 0px !important;
+            font-size: .6rem;
+            font-weight: normal;
+            line-height: 16px;
+
+            .location {
+                height: 50px;
+            }
+
+            p {
+                max-width: calc(100% - 32px - 12px) !important;
+            }
+        }
+
+        img {
+            order: -1;
+            margin-bottom: 30px;
+        }
+    }
+}
