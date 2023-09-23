@@ -119,6 +119,7 @@ main .coming-soon::before {
 main .coming-soon .container {
   position: relative;
   text-align: center;
+  width: 100%;
 }
 main .coming-soon .container::before {
   content: "";
@@ -129,7 +130,7 @@ main .coming-soon .container::before {
   opacity: 0.5;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
 }
 main .coming-soon .container h1 {
   font-size: 4rem;

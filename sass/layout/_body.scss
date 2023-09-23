@@ -23,6 +23,7 @@ main {
         .container {
             position: relative;
             text-align: center;
+            width: 100%;
 
 
             &::before {
@@ -34,7 +35,7 @@ main {
                 opacity: .5;
                 background-repeat: no-repeat;
                 background-position: center;
-                background-size: cover;
+                background-size: contain;
             }
 
             h1 {
